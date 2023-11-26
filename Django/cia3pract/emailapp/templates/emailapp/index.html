@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightgray;
+            font-family: sans-serif;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .myform {
+            width: 25%;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 20px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .myform label {
+            font-size: 20px;
+        }
+        .myform input {
+            padding: 10px;
+            border-radius: 20px;
+            border: 2px solid black;
+        }
+        .myform button {
+            color: white;
+            background-color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: .3s;
+            border-radius: 20px;
+        }
+        .myform button:hover {
+            opacity: .8;
+        }
+        .title {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="title">Email Validator</h3>
+    <div class="container">
+        <form action="" class="myform" method="post">
+            {% csrf_token %}
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email">
+            <button type="submit">Validate</button>
+            {% if valid != '' %}
+                <p>{{ valid }}</p>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
