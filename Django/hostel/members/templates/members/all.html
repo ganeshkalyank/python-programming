@@ -1,0 +1,33 @@
+{% extends "members/base.html" %}
+
+{% block title %}All | Hostel{% endblock %}
+
+{% block body %}
+<h3>Hostel Management System</h3>
+<h4>All Members</h4>
+<a href="/">Home</a><br><br>
+<table>
+    <thead>
+        <tr>
+            <th>Aadhar Number</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Native Place</th>
+            <th>Mobile Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in members %}
+            <tr>
+                <td>{{ member.AadharNumber }}</td>
+                <td>{{ member.Name }}</td>
+                <td>{{ member.Age }}</td>
+                <td>{{ member.Address }}</td>
+                <td>{{ member.NativePlace }}</td>
+                <td>{{ member.MobileNumber }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

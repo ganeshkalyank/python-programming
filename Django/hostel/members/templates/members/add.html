@@ -1,0 +1,19 @@
+{% extends "members/base.html" %}
+
+{% block title %}Add | Hostel{% endblock %}
+
+{% block body %}
+<h3>Hostel Management System</h3>
+<h4>Add Member</h4>
+<a href="/">Home</a><br><br>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="AadharNumber" placeholder="AadharNumber"><br><br>
+    <input type="text" name="Name" placeholder="Name"><br><br>
+    <input type="text" name="Age" placeholder="Age"><br><br>
+    <input type="text" name="Address" placeholder="Address"><br><br>
+    <input type="text" name="NativePlace" placeholder="NativePlace"><br><br>
+    <input type="text" name="MobileNumber" placeholder="MobileNumber"><br><br>
+    <input type="submit">
+</form>
+{% endblock %}

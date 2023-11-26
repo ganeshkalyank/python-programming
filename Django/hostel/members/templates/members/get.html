@@ -1,0 +1,23 @@
+{% extends "members/base.html" %}
+
+{% block title %}Get | Hostel{% endblock %}
+
+{% block body %}
+<h3>Hostel Management System</h3>
+<h4>Add Member</h4>
+<a href="/">Home</a><br><br>
+<form action="" method="get">
+    <input type="text" name="MobileNumber" placeholder="MobileNumber"><br><br>
+    <input type="submit"><br><br>
+</form>
+{% if m %}
+<div>
+    <b>AadharNumber: </b>{{ m.AadharNumber }}<br>
+    <b>Name: </b>{{ m.Name }}<br>
+    <b>Age: </b>{{ m.Age }}<br>
+    <b>Address: </b>{{ m.Address }}<br>
+    <b>NativePlace: </b>{{ m.NativePlace }}<br>
+    <b>MobileNumber: </b>{{ m.MobileNumber }}<br>
+</div>
+{% endif %}
+{% endblock %}

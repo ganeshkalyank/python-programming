@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit | Tasks</title>
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h3 style="text-align: center">Welcome to Tasks</h3>
+        <hr>
+        <div style="display:flex; justify-content: center; margin-bottom: 10px">
+            <form action="{% url 'edit' task.id %}" method="post"
+                  style="padding: 10px;
+                  border: 1px solid black;
+                  width: 50%;
+                  display: flex;
+                  justify-content: center;
+                  gap: 10px">
+                {% csrf_token %}
+                <input type="text" name="title" placeholder="Title" value="{{ task.title }}" required>
+                <input type="text" name="description" placeholder="Description" value="{{ task.description }}" required>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+    </body>
+</html>

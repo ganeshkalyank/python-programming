@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home | Tasks</title>
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h3 style="text-align: center">Welcome to Tasks</h3>
+        <hr>
+        <div style="display:flex; justify-content: center; margin-bottom: 10px">
+            <form action="{% url 'add' %}" method="post"
+                  style="padding: 10px;
+                  border: 1px solid black;
+                  width: 50%;
+                  display: flex;
+                  justify-content: center;
+                  gap: 10px">
+                {% csrf_token %}
+                <input type="text" name="title" placeholder="Title" required>
+                <input type="text" name="description" placeholder="Description" required>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+        {% if tasks %}
+            {% for task in tasks %}
+                <div style="display: flex; justify-content: center; margin-bottom: 10px">
+                    <div style="padding: 10px; border: 1px solid black; width: 50%">
+                        <h4 style="text-align: center">{{ task.title }}</h4>
+                        <p style="text-align: center">{{ task.description }}</p>
+                        <p style="text-align: center">
+                            <a href="{% url 'edit' task.id %}">Edit</a>
+                            <a href="{% url 'delete' task.id %}">Delete</a>
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align: center">No tasks available</p>
+        {% endif %}
+    </body>
+</html>
