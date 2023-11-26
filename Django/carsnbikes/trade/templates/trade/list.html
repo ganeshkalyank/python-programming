@@ -1,0 +1,38 @@
+{% extends 'trade/base.html' %}
+
+{% block title %}Sell{% endblock %}
+
+{% block body %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Contact Number</th>
+            <th>Vehicle Type</th>
+            <th>Brand</th>
+            <th>Model Name</th>
+            <th>Year</th>
+            <th>Kilometers</th>
+            <th>Color</th>
+            <th>State</th>
+            <th>Owner Count</th>
+            <th>Base Price</th>
+            <th>Payment Mode</th>
+        </tr>
+        {% for vehicle in vehicles %}
+            <tr>
+                <td>{{ vehicle.name }}</td>
+                <td>{{ vehicle.contact_number }}</td>
+                <td>{{ vehicle.vehicle_type }}</td>
+                <td>{{ vehicle.brand }}</td>
+                <td>{{ vehicle.model_name }}</td>
+                <td>{{ vehicle.year_of_purchase }}</td>
+                <td>{{ vehicle.kilometers }}</td>
+                <td>{{ vehicle.color }}</td>
+                <td>{{ vehicle.registered_state }}</td>
+                <td>{{ vehile.no_of_owners }}</td>
+                <td>{{ vehicle.base_price }}</td>
+                <td>{{ vehicle.mode_of_payment }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -101,15 +101,15 @@ def main():
             case 3:
                 id = int(input("Enter Book ID: "))
                 for book in ebooks+printed_books:
-                    if book.id == id:
+                    if book.book_id == id:
                         book.print_details()
             case 4:
                 id = int(input("Enter Book ID: "))
                 for book in ebooks:
-                    if book.id == id:
+                    if book.book_id == id:
                         ebooks.remove(book)
                 for book in printed_books:
-                    if book.id == id:
+                    if book.book_id == id:
                         printed_books.remove(book)
                 print("Book removed succesfully (if exists)!")
             case 5:
