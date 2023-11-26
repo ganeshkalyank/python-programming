@@ -1,0 +1,12 @@
+{% extends "garden/base.html" %}
+
+{% block title %}Insert{% endblock %}
+
+{% block body %}
+<a href="/"><p>Home</p></a>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+</form>
+{% endblock %}

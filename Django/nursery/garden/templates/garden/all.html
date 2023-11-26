@@ -1,0 +1,25 @@
+{% extends "garden/base.html" %}
+
+{% block title %}All{% endblock %}
+
+{% block body %}
+<a href="/"><p>Home</p></a>
+<table>
+    <tr>
+        <th>Plant name</th>
+        <th>Plant type</th>
+        <th>Plant price</th>
+        <th>Plant benefits</th>
+        <th>Edit?</th>
+    </tr>
+    {% for plant in plants %}
+    <tr>
+        <td>{{ plant.plant_name }}</td>
+        <td>{{ plant.plant_type }}</td>
+        <td>{{ plant.plant_price }}</td>
+        <td>{{ plant.plant_benefits }}</td>
+        <td><a href="/edit/{{ plant.id }}">Edit</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
